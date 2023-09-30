@@ -1,4 +1,5 @@
 import React from "react";
+import ResultRows from "./ResultRows";
 
 const Result = (props) => {
   const resultData = props.items;
@@ -14,17 +15,7 @@ const Result = (props) => {
           <th>Invested Capital</th>
         </tr>
       </thead>
-      <tbody>
-        {resultData.map((yearData) => (
-          <tr key={yearData.key}>
-            <td>{yearData.year}</td>
-            <td>{yearData.savingsEndOfYear}</td>
-            <td>{yearData.yearlyInterest}</td>
-            <td>{yearData.totalInterest}</td>
-            <td>{yearData.totalContribution}</td>
-          </tr>
-        ))}
-      </tbody>
+      <ResultRows items={resultData} />
     </table>
   );
 };
