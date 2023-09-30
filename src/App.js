@@ -41,6 +41,10 @@ function App() {
     setResultData(yearlyData);
   };
 
+  const resetHandler = () => {
+    setResultData([]);
+  }
+
   let content = (
     <p style={{ textAlign: "center" }}>Enter your investment plan to see yearly details!</p>
   );
@@ -53,7 +57,7 @@ function App() {
     <div>
       <Header />
 
-      <InvestmentForm onCalculate={calculateHandler} />
+      <InvestmentForm onCalculate={calculateHandler} onReset={resetHandler} />
 
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}

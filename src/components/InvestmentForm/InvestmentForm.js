@@ -19,8 +19,19 @@ const InvestmentForm = (props) => {
     props.onCalculate(calculateData);    
   }
 
+  const resetHandler = (event) => {
+    event.preventDefault();
+
+    setCurrentSavings("");
+    setYearlySavings("");
+    setExpectedIntereset("");
+    setInvestmentDuration("");
+
+    props.onReset();
+  }
+
   return (
-    <form className="form" onSubmit={calculateSubmitHandler}>
+    <form className="form" onSubmit={calculateSubmitHandler} onReset={resetHandler}>
       <div className="input-group">
         <p>
           <label htmlFor="current-savings">Current Savings ($)</label>
