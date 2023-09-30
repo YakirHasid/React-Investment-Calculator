@@ -6,7 +6,7 @@ import Result from "./components/Result/Result"
 
 function App() {
 
-  const [resultData, setResultData] = useState({});
+  const [resultData, setResultData] = useState([]);
 
   const calculateHandler = (userInput) => {
     // Should be triggered when form is submitted
@@ -23,12 +23,17 @@ function App() {
     for (let i = 0; i < duration; i++) {
       const yearlyInterest = currentSavings * expectedReturn;
       currentSavings += yearlyInterest + yearlyContribution;
+      const totalInterest = (i+1)*yearlyInterest;
+      const totalInvestment = (i+1)*yearlyContribution;
       yearlyData.push({
         // feel free to change the shape of the data pushed to the array!
+        key: i + 1,
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
         yearlyContribution: yearlyContribution,
+        totalInterest: totalInterest,
+        totalContribution: totalInvestment
       });
     }
 
@@ -46,7 +51,7 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
 
-      <Result value={resultData} />
+      <Result items={resultData} />
     </div>
   );
 }
