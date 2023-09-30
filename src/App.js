@@ -1,5 +1,5 @@
-import Header from './components/Header';
-import InvestmentForm from './components/InvestmentForm';
+import Header from './components/Header/Header';
+import InvestmentForm from './components/InvestmentForm/InvestmentForm';
 
 function App() {
   const calculateHandler = (userInput) => {
