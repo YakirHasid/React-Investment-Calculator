@@ -16,7 +16,7 @@ const InvestmentForm = (props) => {
       'duration' : investmentDuration
     };
 
-    console.log(calculateData);
+    props.onCalculate(calculateData);    
   }
 
   return (
