@@ -5,7 +5,7 @@ const ResultRows = (props) => {
   return (
     <tbody>
       {resultData.map((yearData) => (
-        <tr key={yearData.key}>
+        <tr key={yearData.year}>
           <td>{yearData.year}</td>
           <td>{yearData.savingsEndOfYear}</td>
           <td>{yearData.yearlyInterest}</td>
