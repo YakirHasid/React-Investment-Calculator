@@ -42,6 +42,14 @@ function App() {
     setResultData(yearlyData);
   };
 
+  let content = (
+    <p style={{ textAlign: "center" }}>Enter your investment plan to see yearly details!</p>
+  );
+
+  if(resultData.length > 0) {
+    content = <Result items={resultData} />
+  }
+
   return (
     <div>
       <Header />
@@ -51,7 +59,7 @@ function App() {
       {/* Todo: Show below table conditionally (only once result data is available) */}
       {/* Show fallback text if no data is available */}
 
-      <Result items={resultData} />
+      {content}      
     </div>
   );
 }
