@@ -7,10 +7,30 @@ const ResultRows = (props) => {
       {resultData.map((yearData) => (
         <tr key={yearData.year}>
           <td>{yearData.year}</td>
-          <td>{yearData.savingsEndOfYear.toFixed(2)}</td>
-          <td>{yearData.yearlyInterest.toFixed(2)}</td>
-          <td>{yearData.totalInterest.toFixed(2)}</td>
-          <td>{yearData.totalContribution.toFixed(2)}</td>
+          <td>
+            {yearData.savingsEndOfYear.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </td>
+          <td>
+            {yearData.yearlyInterest.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </td>
+          <td>
+            {yearData.totalInterest.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </td>
+          <td>
+            {yearData.totalContribution.toLocaleString(undefined, {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            })}
+          </td>
         </tr>
       ))}
     </tbody>
