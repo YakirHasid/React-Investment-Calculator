@@ -6,8 +6,21 @@ const InvestmentForm = (props) => {
   const [expectedIntereset, setExpectedIntereset] = useState("");
   const [investmentDuration, setInvestmentDuration] = useState("");
 
+  const calculateSubmitHandler = (event) => {
+    event.preventDefault();
+
+    const calculateData = {
+      'current-savings': currentSavings,
+      'yearly-contribution': yearlySavings,
+      'expected-return' : expectedIntereset,
+      'duration' : investmentDuration
+    };
+
+    props.onCalculate(calculateData);    
+  }
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={calculateSubmitHandler}>
       <div className="input-group">
         <p>
           <label htmlFor="current-savings">Current Savings ($)</label>
