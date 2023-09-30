@@ -26,8 +26,7 @@ function App() {
       const totalInterest = (i+1)*yearlyInterest;
       const totalInvestment = (i+1)*yearlyContribution;
       yearlyData.push({
-        // feel free to change the shape of the data pushed to the array!
-        key: i + 1,
+        // feel free to change the shape of the data pushed to the array!        
         year: i + 1,
         yearlyInterest: yearlyInterest,
         savingsEndOfYear: currentSavings,
