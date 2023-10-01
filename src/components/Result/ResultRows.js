@@ -1,7 +1,5 @@
 import React from "react";
 
-import styles from './ResultRows.modules.css'
-
 const ResultRows = (props) => {
   const resultData = props.items;
 
@@ -13,7 +11,7 @@ const ResultRows = (props) => {
   });
   
   return (
-    <tbody style={styles}>
+    <tbody>
       {resultData.map((yearData) => (
         <tr key={yearData.year}>
           <td>{yearData.year}</td>
