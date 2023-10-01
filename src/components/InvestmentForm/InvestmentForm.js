@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import styles from './InvestmentForm.modules.css'
+
 const InvestmentForm = (props) => {
   const [currentSavings, setCurrentSavings] = useState("");
   const [yearlySavings, setYearlySavings] = useState("");
@@ -31,7 +33,7 @@ const InvestmentForm = (props) => {
   }
 
   return (
-    <form className="form" onSubmit={calculateSubmitHandler} onReset={resetHandler}>
+    <form style={styles} className="form" onSubmit={calculateSubmitHandler} onReset={resetHandler}>
       <div className="input-group">
         <p>
           <label htmlFor="current-savings">Current Savings ($)</label>
