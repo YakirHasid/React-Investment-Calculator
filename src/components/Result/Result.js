@@ -1,13 +1,13 @@
 import React from "react";
 import ResultRows from "./ResultRows";
 
-import styles from './Result.modules.css'
+import styles from './Result.module.css'
 
 const Result = (props) => {
   const resultData = props.items;
 
   return (
-    <table style={styles} className="result">
+    <table className={styles.result}>
       <thead>
         <tr>
           <th>Year</th>
